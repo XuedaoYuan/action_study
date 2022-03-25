@@ -9,14 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install node.js
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      # - name: install deps
-      # - run: npm install
-      # - name: build app
-      # - run: npm run build
+      - run: npm install
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
