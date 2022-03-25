@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.TX_CLOUD_PASSWORD }}
           port: ${{ secrets.TX_CLOUD_PORT }}
           source: 'public'
-          target: 'xdyuan'
+          target: '/data/blog'
