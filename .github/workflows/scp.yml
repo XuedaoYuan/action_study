@@ -13,10 +13,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: install deps
-      - run: npm install
-      - name: build app
-      - run: npm run build
+      # - name: install deps
+      # - run: npm install
+      # - name: build app
+      # - run: npm run build
       - name: copy file via ssh password
         uses: appleboy/scp-action@master
         with:
