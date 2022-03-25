@@ -1,0 +1,24 @@
+name: scp files
+on:
+  push:
+    branches:
+      - dev3
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '14'
+      # - run: npm install
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.TX_CLOUD_HOST }}
+          username: ${{ secrets.TX_CLOUD_USERNAME }}
+          password: ${{ secrets.TX_CLOUD_PASSWORD }}
+          port: ${{ secrets.TX_CLOUD_PORT }}
+          source: 'public'
+          target: 'xdyuan'
